@@ -6,10 +6,17 @@ The Structural Simulation Toolkit (SST) was developed to explore innovations in 
 
 ## Install Elements
 
+Clone repo
+
+```bash
+git clone https://github.com/PlatinumCD/lightweight-sst-elements.git
+cd lightweight-sst-elements
+```
+
 Build configure script:
 
 ```bash
-$ ./autogen.sh
+./autogen.sh
 ```
 
 Create `build` directory
@@ -20,11 +27,17 @@ mkdir build && pushd build
 
 Configure SST Elements
 
-```
+```bash
 ../configure \
     MPICC=/bin/mpicc \
     MPICXX=/bin/mpic++ \
-    --prefix=$(INSTALL_PREFIX)
+    --prefix=$INSTALL_PREFIX
+```
+
+Copy an SST element into `./src/sst/elements`
+
+```
+cp -r $ELEMENT_DIR ./src/sst/elements/.
 ```
 
 Install SST Elements
